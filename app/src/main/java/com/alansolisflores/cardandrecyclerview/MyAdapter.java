@@ -1,9 +1,12 @@
 package com.alansolisflores.cardandrecyclerview;
 
 import android.support.v7.widget.RecyclerView;
+import android.view.ContextMenu;
 import android.view.LayoutInflater;
+import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.TextView;
 
 import java.util.List;
@@ -67,6 +70,6 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
      * Custom on item click listener interface
      */
     public interface OnItemClickListener{
-        void onItemClick(String name,int posistion);
+        void onItemClick(String name,int position);
     }
 }
