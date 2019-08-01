@@ -29,6 +29,8 @@ public class MainActivity extends AppCompatActivity implements MyAdapter.OnItemC
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         this.names = getNames();
         this.added = 1;
 
