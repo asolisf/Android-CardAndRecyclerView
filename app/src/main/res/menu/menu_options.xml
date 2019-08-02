@@ -10,7 +10,15 @@
         <menu>
             <item
                 android:id="@+id/recyclerViewItem"
-                android:title="RecyclerView"
+                android:title="Recycler view"
+                app:showAsAction="ifRoom" />
+            <item
+                android:id="@+id/cardViewItem"
+                android:title="Card view"
+                app:showAsAction="ifRoom" />
+            <item
+                android:id="@+id/cardViewAndRecyclerItem"
+                android:title="Card view and Recycler"
                 app:showAsAction="ifRoom" />
         </menu>
     </item>

@@ -4,15 +4,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.DividerItemDecoration;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements MyAdapter.OnItemClickListener {
+public class RecyclerViewActivity extends AppCompatActivity implements MyAdapter.OnItemClickListener {
 
     private RecyclerView recyclerView;
 
@@ -35,19 +37,29 @@ public class MainActivity extends AppCompatActivity implements MyAdapter.OnItemC
         this.added = 1;
 
         this.recyclerView = findViewById(R.id.namesRecyclerView);
+
+        //In line
         this.layoutManager = new LinearLayoutManager(this);
+
+        //Grid with span count
+        this.layoutManager = new GridLayoutManager(this,2);
+
+        // Looks like grid layout but with different width items
+        this.layoutManager = new StaggeredGridLayoutManager(2,
+                StaggeredGridLayoutManager.VERTICAL);
+
         this.adapter = new MyAdapter(names,
                                      R.layout.recycler_view_item,
                      this);
 
-        //If layout doesn't change
+        //If layout doesn't change. Doesn't use with StaggeredManager
         this.recyclerView.setHasFixedSize(true);
 
         //Default animation
         this.recyclerView.setItemAnimator(new DefaultItemAnimator());
         this.recyclerView.setLayoutManager(this.layoutManager);
         this.recyclerView.setAdapter(this.adapter);
-        this.recyclerView.addItemDecoration(new DividerItemDecoration(MainActivity.this,
+        this.recyclerView.addItemDecoration(new DividerItemDecoration(RecyclerViewActivity.this,
                                                                 DividerItemDecoration.VERTICAL));
 
     }

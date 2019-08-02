@@ -3,12 +3,9 @@ package com.alansolisflores.cardandrecyclerview;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.AdapterView;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -28,9 +25,19 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
+        Intent intent;
+
         switch (item.getItemId()){
             case R.id.recyclerViewItem:
-                Intent intent = new Intent(HomeActivity.this,MainActivity.class);
+                intent = new Intent(HomeActivity.this, RecyclerViewActivity.class);
+                startActivity(intent);
+                return true;
+            case R.id.cardViewItem:
+                intent = new Intent(HomeActivity.this,CardViewActivity.class);
+                startActivity(intent);
+                return true;
+            case R.id.cardViewAndRecyclerItem:
+                intent = new Intent(HomeActivity.this,CardAndRecyclerActivity.class);
                 startActivity(intent);
                 return true;
             default:
