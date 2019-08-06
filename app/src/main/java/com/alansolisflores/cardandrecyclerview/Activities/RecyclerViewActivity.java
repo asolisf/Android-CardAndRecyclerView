@@ -1,4 +1,4 @@
-package com.alansolisflores.cardandrecyclerview;
+package com.alansolisflores.cardandrecyclerview.Activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,6 +11,10 @@ import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+
+import com.alansolisflores.cardandrecyclerview.Adapters.MyAdapter;
+import com.alansolisflores.cardandrecyclerview.R;
+
 import java.util.ArrayList;
 import java.util.List;
 

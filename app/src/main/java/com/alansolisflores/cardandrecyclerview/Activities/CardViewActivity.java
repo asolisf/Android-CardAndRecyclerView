@@ -1,17 +1,17 @@
-package com.alansolisflores.cardandrecyclerview;
+package com.alansolisflores.cardandrecyclerview.Activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class CardAndRecyclerActivity extends AppCompatActivity {
+import com.alansolisflores.cardandrecyclerview.R;
+
+public class CardViewActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_card_and_recycler);
+        setContentView(R.layout.activity_card_view);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-
     }
 }

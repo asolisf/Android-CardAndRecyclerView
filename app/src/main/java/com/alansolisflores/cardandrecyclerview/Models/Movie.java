@@ -1,6 +1,6 @@
-package com.alansolisflores.cardandrecyclerview;
+package com.alansolisflores.cardandrecyclerview.Models;
 
-public class Moview {
+public class Movie {
 
     private String name;
 
@@ -22,7 +22,7 @@ public class Moview {
         this.image = image;
     }
 
-    public Moview(String name, int image) {
+    public Movie(String name, int image) {
         this.name = name;
         this.image = image;
     }
