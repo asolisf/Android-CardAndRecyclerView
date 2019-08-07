@@ -1,5 +1,6 @@
 package com.alansolisflores.cardandrecyclerview.Adapters;
 
+import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +10,7 @@ import android.widget.TextView;
 
 import com.alansolisflores.cardandrecyclerview.Models.Movie;
 import com.alansolisflores.cardandrecyclerview.R;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -20,7 +22,9 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.ViewHo
 
     private OnItemClickListener onItemClickListener;
 
-    public CardViewAdapter(List<Movie> movies, int layout, OnItemClickListener onItemClickListener){
+    public CardViewAdapter(List<Movie> movies,
+                           int layout,
+                           OnItemClickListener onItemClickListener){
         this.movies = movies;
         this.layout = layout;
         this.onItemClickListener = onItemClickListener;
@@ -58,7 +62,15 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.ViewHo
 
         public void bind(final Movie movie, final OnItemClickListener onItemClickListener, final int position){
             this.textView.setText(movie.getName());
-            this.imageView.setImageResource(movie.getImage());
+
+
+            Picasso.get()
+                    .load(movie.getImage())
+                    .fit()
+                    .centerCrop()
+                    .into(this.imageView);
+
+            //this.imageView.setImageResource(movie.getImage());
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override

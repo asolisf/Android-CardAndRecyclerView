@@ -37,7 +37,8 @@ public class CardAndRecyclerActivity extends AppCompatActivity implements CardVi
         this.cardViewAdapter
                 = new CardViewAdapter(
                         movies,
-                        R.layout.card_view_recycler,CardAndRecyclerActivity.this);
+                        R.layout.card_view_recycler,
+                CardAndRecyclerActivity.this);
 
         this.recyclerView.setLayoutManager(this.linearLayoutManager);
         this.recyclerView.setAdapter(this.cardViewAdapter);
